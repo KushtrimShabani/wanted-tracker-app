@@ -1,5 +1,7 @@
 # WantedTracker
 
+![CI](https://github.com/KushtrimShabani/wanted-tracker-app/actions/workflows/ci.yml/badge.svg)
+
 A comprehensive law enforcement portal for browsing and searching the FBI's Most Wanted database. Features modern React architecture with robust backend caching and authentication.
 
 ## Tech Stack
@@ -100,8 +102,8 @@ A comprehensive law enforcement portal for browsing and searching the FBI's Most
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd fbi-wanted-directory
+   git clone https://github.com/KushtrimShabani/wanted-tracker-app.git
+   cd wanted-tracker-app
    ```
 
 2. **Environment Setup**
@@ -158,22 +160,31 @@ npm run docker:down       # Stop all services
 
 ### Docker Development
 
-1. **Build and run with Docker Compose**
+1. **Quick start (one‑liner)**
+   ```bash
+   docker compose up --build --detach && open http://localhost:3000
+   ```
+2. **Verbose build & run**
    ```bash
    docker-compose up --build
    ```
 
-2. **Access the application**
+3. **Access the application**
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:4000
    - Health Check: http://localhost:4000/health
 
-3. **Stop the containers**
+4. **Stop the containers**
    ```bash
    docker-compose down
    ```
 
 ## Testing
+
+### Run all tests (root)
+```bash
+npm run test          # Executes both backend (Jest) and frontend (Vitest) suites
+```
 
 ### Backend Tests (Jest + Supertest)
 ```bash
@@ -265,6 +276,7 @@ docker-compose up -d
 - **Demo Credentials** - Username: `admin`, Password: `admin` (for testing only)
 - **Token Expiration** - 24-hour token validity
 - **Protected Routes** - All FBI API endpoints require authentication
+- **Reviewer shortcut** – set `AUTH_REQUIRED=false` in `server/.env` to disable login while reviewing.
 
 ### Backend Security
 - **Helmet.js** - Security headers
@@ -355,4 +367,3 @@ For issues and questions:
 - Review FBI API documentation: https://api.fbi.gov/docs
 
 ---
-
