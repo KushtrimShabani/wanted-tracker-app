@@ -20,7 +20,8 @@ A comprehensive law enforcement portal for browsing and searching the FBI's Most
 - **Tailwind CSS 3** - Styling framework
 
 ### Testing
-- **Jest** - Testing framework
+- **Jest** - Backend testing framework (Node.js/API)
+- **Vitest** - Frontend testing framework (React components)
 - **Supertest** - HTTP testing (backend)
 - **React Testing Library** - Component testing (frontend)
 
@@ -174,20 +175,21 @@ npm run docker:down       # Stop all services
 
 ## Testing
 
-### Backend Tests
+### Backend Tests (Jest + Supertest)
 ```bash
 cd server
-npm test                # Run tests
-npm run test:watch      # Watch mode
-npm run test:coverage   # Coverage report
+npm test                # Run Jest tests
+npm run test:watch      # Jest watch mode
+npm run test:coverage   # Jest coverage report
 ```
 
-### Frontend Tests
+### Frontend Tests (Vitest + React Testing Library)
 ```bash
 cd client
-npm test                # Run tests
-npm run test:watch      # Watch mode
-npm run test:coverage   # Coverage report
+npm test                # Run Vitest tests
+npm run test:watch      # Vitest watch mode
+npm run test:ui         # Vitest interactive UI
+npm run test:coverage   # Vitest coverage report
 ```
 
 ### Test Coverage Requirements
@@ -289,7 +291,7 @@ docker-compose up -d
 ### Code Quality
 - **ESLint** - JavaScript linting
 - **Prettier** - Code formatting
-- **Jest** - Automated testing
+- **Jest + Vitest** - Automated testing (hybrid setup)
 - **Docker** - Consistent deployment
 
 ### Development Workflow

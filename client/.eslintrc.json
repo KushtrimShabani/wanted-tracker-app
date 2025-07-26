@@ -16,8 +16,17 @@
   "env": {
     "browser": true,
     "es2022": true,
-    "node": true,
-    "jest": true
+    "node": true
+  },
+  "globals": {
+    "vi": "readonly",
+    "describe": "readonly",
+    "it": "readonly",
+    "expect": "readonly",
+    "beforeEach": "readonly",
+    "afterEach": "readonly",
+    "beforeAll": "readonly",
+    "afterAll": "readonly"
   },
   "settings": {
     "react": {

@@ -41,15 +41,17 @@
   - [x] WantedDetail for individual person view
 - [x] 20. Implement routing with React Router 6
 - [x] 21. Add responsive design with mobile-first approach
-- [x] 22. Create frontend tests with React Testing Library
+- [x] 22. Create frontend tests with Vitest + React Testing Library
 - [x] 23. Create frontend Dockerfile with Nginx
 
 ### Phase 4: Testing Implementation
-- [x] 24. Set up Jest configuration for both frontend and backend
+- [x] 24. Set up hybrid testing configuration:
+  - [x] Backend: Jest + Supertest for Node.js API testing
+  - [x] Frontend: Vitest + React Testing Library for React components
 - [x] 25. Create comprehensive test suites:
-  - [x] Backend API route tests
-  - [x] Frontend component tests
-  - [x] Store/state management tests
+  - [x] Backend API route tests (Jest)
+  - [x] Frontend component tests (Vitest)
+  - [x] Store/state management tests (Vitest)
 - [x] 26. Mock external API calls in tests
 - [x] 27. Ensure ≥80% test coverage for all metrics
 - [x] 28. Add test scripts to package.json files
@@ -101,7 +103,7 @@
 - [x] React 18 + Vite + Tailwind 3 frontend
 - [x] 5-minute caching with node-cache
 - [x] Jest + Supertest backend tests
-- [x] React Testing Library frontend tests
+- [x] Vitest + React Testing Library frontend tests
 - [x] Docker containerization complete
 - [x] docker-compose.yml setup working
 
@@ -143,11 +145,19 @@ curl http://localhost:3000
 ### Testing
 ```bash
 # Run all tests
-cd server && npm test
-cd client && npm test
+cd server && npm test    # Jest + Supertest
+cd client && npm test    # Vitest + React Testing Library
 
 # Coverage reports
-npm run test:coverage
+cd server && npm run test:coverage  # Jest coverage
+cd client && npm run test:coverage  # Vitest coverage
+
+# Watch mode for development
+cd server && npm run test:watch     # Jest watch
+cd client && npm run test:watch     # Vitest watch
+
+# Interactive UI (Vitest only)
+cd client && npm run test:ui
 ```
 
 ## 📋 Final Checklist
